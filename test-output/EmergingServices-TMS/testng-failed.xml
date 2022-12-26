@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="1" name="Failed suite [EmergingServices-TMS]" guice-stage="DEVELOPMENT" verbose="10">
+  <test thread-count="1" name="AIMS_AddAssetTest(failed)" verbose="10">
+    <parameter name="Browser" value="chrome"/>
+    <classes>
+      <class name="TestCases.addAssetTest">
+        <methods>
+          <include name="validateAddAsset"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- TestCases.addAssetTest -->
+    </classes>
+  </test> <!-- AIMS_AddAssetTest(failed) -->
+</suite> <!-- Failed suite [EmergingServices-TMS] -->

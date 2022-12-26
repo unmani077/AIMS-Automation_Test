@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="EmergingServices-TMS" verbose="10" parallel="false"
+	thread-count="1" preserve-order="true">
+	
+	
+	  <!--   <test name="AIMS_loginTest">
+		<parameter name="Browser" value="chrome"></parameter>
+		<classes>
+			<class name="TestCases.LoginTest"></class>
+		</classes>
+			</test> -->  
+			   <test name="AIMS_AddAssetTest">
+			   <parameter name="Browser" value="chrome"></parameter>
+		<classes>
+			<class name="TestCases.addAssetTest"></class>
+		</classes>
+	</test>  
+	
+</suite>
