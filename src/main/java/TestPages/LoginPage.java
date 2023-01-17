@@ -12,7 +12,7 @@ import TestBase.TestBase;
 
 public class LoginPage extends TestBase {
 
-	WebDriverWait wait = new WebDriverWait(driver, 40);
+	static WebDriverWait wait = new WebDriverWait(driver, 40);
 	
 	@FindBy(xpath = "//a[@id='btnAccept']")
 	WebElement acceptCookies;
@@ -23,6 +23,7 @@ public class LoginPage extends TestBase {
 	@FindBy(xpath = "//input[@id='PTLogin']")
 	WebElement loginBtn;
 	@FindBy(xpath = "//img[@src='/content/images/siLogo.png']")
+	static
 	WebElement logo;
 
 	
@@ -44,7 +45,7 @@ public LoginPage() {
 		return new HomePage();
 	}	
 	
-	public boolean validateLogo() {
+	public static boolean validateLogo() {
 		wait.until(ExpectedConditions.visibilityOf(logo));
 		return logo.isDisplayed();
 	}

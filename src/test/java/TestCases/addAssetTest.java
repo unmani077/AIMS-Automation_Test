@@ -83,7 +83,7 @@ public class addAssetTest extends TestBase {
 		try {
 			
 			assetSummary.addAssetAction();
-			Assert.assertEquals("Asset- 22 Dec 22-1", assetSummary.addedAssetName);
+			Assert.assertEquals("Asset- 17 Jan 23", assetSummary.addedAssetName);
 			
 		} 
 		catch (Exception e) 

@@ -7,6 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
@@ -24,7 +25,8 @@ public class AssetSummary extends TestBase {
 		@FindBy(xpath = "//span[contains(text(),'Asset Summary')]")
 		WebElement assetSummaryOption;
 		
-		@FindBy(xpath = "/html/body/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/table/tbody/tr[1]/td[11]/div/div[1]")
+	//@FindBy(xpath = "/html/body/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/table/tbody/tr[1]/td[11]/div/div[1]")
+	  @FindBy(xpath = "/html/body/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/table/tbody/tr[1]/td[11]/div/div[1]")
 	//	@FindBy(css = "div.container.ptPageWrap:nth-child(14) div.ptPageWrap:nth-child(2) div.pageMiddle.leftMenuExpand:nth-child(2) div.container-fluid.ptPageContent.ptPageMiddleWrap.panel-container.forAssetSectionRight div.panel-left.ui-resizable:nth-child(2) div.ptTreeViewWrap.csTreeAS:nth-child(1) div.fixed-size:nth-child(1) div.slimScrollDiv div.treeWrapper table.csTreeGrid.fancytree-container.fancytree-ext-table.ui-draggable-handle.fancytree-ext-glyph.fancytree-treefocus tbody:nth-child(3) tr.fancytree-active.fancytree-focused.fancytree-expanded.fancytree-has-children.fancytree-lastsib.fancytree-exp-el.fancytree-ico-e:nth-child(1) td:nth-child(11) div.dropdown.user-menu.treeThreeDotsWrap.open > div.dropdown-toggle.treeThreeDots")
 		WebElement threeDots;
 		@FindBy(xpath = "//span[contains(text(),'Asset Type:')]")
@@ -35,8 +37,14 @@ public class AssetSummary extends TestBase {
 		WebElement assetName;
 		@FindBy(xpath = "//a[@id='btnModalSave']")
 		WebElement assetSave;
-		@FindBy(xpath = "//*[@id=\"ui-id-1_2\"]/td[3]/span/span[3]")
+		@FindBy(xpath = "//tbody/tr[@id='ui-id-1_2']/td[3]/span[1]/span[3]")
+		
+		//@FindBy(css = "#ui-id-2 > td:nth-child(3) > span > span.fancytree-title")
 		WebElement addedAsset;
+		@FindBy(xpath= "//select[@id='AssetChildList']" )
+		WebElement assetSelection;
+		@FindBy(xpath= "//a[@onclick='TreeWidgetVW.submitAddChild();']")
+		WebElement saveAsset;
 	
 		
 		public AssetSummary()
@@ -58,13 +66,22 @@ public class AssetSummary extends TestBase {
 			  System.err.println(" Asset type text is: "+ getAssetTypeText);
 			  
 			  Thread.sleep(5000); 
-
+			 
 			  clickByJs(3000, threeDots);
 		
 			  clickByJs(3000, addAsset);
-			  
+
+	
+				 assetSelection.click();
+				  
+				  Select assetValue= new Select(assetSelection);
+				 
+				  assetValue.selectByVisibleText("Plant");
+				 
+				  saveAsset.click();
+				
 			  clickByJs(3000, assetName);
-			  assetName.sendKeys("Asset- 22 Dec 22-1");
+			  assetName.sendKeys("Asset- 17 Jan 23");
 			
 			  
 			  clickByJs(3000, assetSave);
@@ -75,6 +92,13 @@ public class AssetSummary extends TestBase {
 			  
 				 //return addedAssetName;
 			}
+
+			/*
+			 * private void clickByJs(int timeout, WebElement assetName2) { // TODO
+			 * Auto-generated method stub
+			 * 
+			 * }
+			 */
 			
 			
 		
